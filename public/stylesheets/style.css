@@ -1,0 +1,100 @@
+@import url("//fonts.googleapis.com/css?family=Lobster|Cabin:400,700");
+
+/* General Body and Font */
+body {
+  font-family: "Cabin", Arial, sans-serif;
+  color: #ffffff;
+  background-color: #1d1f21;
+  /* Darker gaming background */
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Lobster', cursive;
+  color: #e6e6e6;
+  /* Light gray for headings */
+}
+
+/* Navbar */
+.navbar {
+  background-color: #2b2d42;
+  border-color: #1a1b25;
+}
+
+.navbar-brand {
+  font-family: 'Lobster', cursive;
+  color: #ef233c !important;
+}
+
+/* Card Styling */
+.card {
+  background-color: #343a40;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* Form Controls */
+.form-control {
+  background-color: #495057;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+}
+
+.form-control:focus {
+  background-color: #495057;
+  color: #ffffff;
+  border-color: #6a11cb;
+  box-shadow: 0 0 5px rgba(106, 17, 203, 0.5);
+}
+
+/* Labels */
+.form-label {
+  color: #8d99ae;
+}
+
+/* Button Styling */
+.btn-primary {
+  background-color: #ef233c;
+  border: none;
+  color: #ffffff;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #d90429;
+}
+
+/* Checkbox Styling */
+.form-check-input {
+  accent-color: #ef233c;
+}
+
+.form-check-label {
+  color: #8d99ae;
+}
+
+/* Gradient Background */
+.gradient-custom {
+  background: linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1));
+}
+
+/* Game Image Styling */
+.game-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Responsive Design Tweaks */
+@media (max-width: 768px) {
+  .card {
+    margin: 0 1rem;
+  }
+}

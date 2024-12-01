@@ -1,0 +1,30 @@
+extends layout
+
+block content
+  section.vh-100.gradient-custom
+    .container.py-5.h-100
+      .row.d-flex.justify-content-center.align-items-center.h-100
+        .col-12.col-md-8.col-lg-6.col-xl-5
+          .card.bg-dark.text-white(style="border-radius: 1rem;")
+            .card-body.p-5.text-center
+              h2.fw-bold.mb-2.text-uppercase Game Portal
+              p.text-white-50.mb-5 Please enter your email and password!
+
+              // Display error message if exists
+              if error
+                .alert.alert-danger(role="alert") #{error}
+                
+              form(action='/login', method='post')
+                //- Email input
+                .form-outline.form-white.mb-4
+                  input.form-control.form-control-lg(type='email', name='email', placeholder='Email', required)
+                //- Password input
+                .form-outline.form-white.mb-4
+                  input.form-control.form-control-lg(type='password', name='password', placeholder='Password', required)
+                
+                //- Submit button
+                button.btn.btn-outline-light.btn-lg.px-5(type='submit') Login
+
+              //- Sign up link
+              p.mb-0 Don't have an account? 
+                a.text-white-50.fw-bold(href='/register') Sign Up

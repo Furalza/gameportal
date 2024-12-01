@@ -1,0 +1,26 @@
+extends layout
+
+block content
+  .container.mt-5
+    .p-5.bg-image.text-center.text-white(style="background-image: url('https://mdbootstrap.com/img/new/textures/full/171.jpg'); height: 250px;")
+      h1.fw-bold.mt-5.mb-0 Create Your Game Portal Account
+  
+    .card.mx-4.mx-md-5.shadow-5-strong.bg-body-tertiary(style="margin-top: -50px; backdrop-filter: blur(30px);")
+      .card-body.py-5.px-md-5
+        .row.d-flex.justify-content-center
+          .col-lg-8
+            h2.fw-bold.mb-5 Sign up now
+            form(action='/register', method='post')
+              .form-outline.mb-4
+                input.form-control(type='text', name='username', placeholder='Username', required)
+                label.form-label Username
+              .form-outline.mb-4
+                input.form-control(type='text', name='name', placeholder='Full Name', required)
+                label.form-label Full Name
+              .form-outline.mb-4
+                input.form-control(type='email', name='email', placeholder='Email Address', required)
+                label.form-label Email Address
+              .form-outline.mb-4
+                input.form-control(type='password', name='password', placeholder='Password', required)
+                label.form-label Password
+              button.btn.btn-primary.btn-block.mb-4(type='submit') Sign up

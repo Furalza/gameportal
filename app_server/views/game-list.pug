@@ -1,0 +1,28 @@
+extends layout
+
+block content
+  .container.mt-4(style='padding-top: 70px;')
+    h1= title
+
+    each game in games
+      .row.mb-4
+        .col-md-12
+          .card.mb-3
+            .row.g-0
+              .col-md-4
+                img(src=game.image, alt=game.name, class="img-fluid game-image")
+              .col-md-8
+                .card-body
+                  h5.card-title= game.name
+                  p.card-text= game.description
+                  //- Genres section
+                  if game.genres && game.genres.length > 0
+                    .genres.mt-2
+                      p.mb-1 Genres:
+                      each genre in game.genres
+                        span.badge.bg-primary.me-1= genre
+                  else
+                    .genres.mt-2
+                      p.text-muted No genres available
+                  p.card-text
+                    small.text-muted Last updated #{game.lastUpdated}
