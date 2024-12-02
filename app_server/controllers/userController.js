@@ -55,6 +55,7 @@ const loginUser = (req, res, next) => {
                 console.error('Error during login:', err);
                 return res.render('login-form', { title: 'Sign In', error: 'An error occurred. Please try again.' });
             }
+            req.session.username = user.username; // Store username in the session
             res.redirect('/games'); // Redirect to games page on successful login
         });
     })(req, res, next);
