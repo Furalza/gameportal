@@ -1,0 +1,16 @@
+<section>
+    <h2>Available Games</h2>
+    <div *ngIf="games.length > 0">
+        <div *ngFor="let game of games" class="card">
+            <img [src]="game.image" [alt]="game.name" class="game-image" />
+            <div>
+                <h3>{{ game.name }}</h3>
+                <p>{{ game.description }}</p>
+                <p *ngIf="game.genres">Genres:
+                    <span *ngFor="let genre of game.genres" class="badge">{{ genre }}</span>
+                </p>
+            </div>
+        </div>
+    </div>
+    <p *ngIf="games.length === 0">No games available.</p>
+</section>

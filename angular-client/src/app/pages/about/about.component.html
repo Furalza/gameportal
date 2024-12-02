@@ -1,0 +1,25 @@
+<div class="about-page">
+    <section class="hero bg-dark text-white text-center py-5">
+        <div class="container">
+            <h1>About Game Portal</h1>
+            <p class="lead">Discover our journey and the team behind Game Portal.</p>
+        </div>
+    </section>
+
+    <section class="team-section py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Our Team</h2>
+            <div class="row">
+                <div *ngFor="let member of teamMembers" class="col-md-4">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">{{ member.name }}</h5>
+                            <p class="card-text">{{ member.role }}</p>
+                            <p class="card-text text-muted">{{ member.bio }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
