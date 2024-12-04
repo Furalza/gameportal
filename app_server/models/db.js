@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 // Corrected MongoDB URI
-
+const dbURI = process.env.dbURI;
 
 // Use native promises
 mongoose.Promise = global.Promise;
