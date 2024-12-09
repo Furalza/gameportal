@@ -29,7 +29,29 @@ const getAllGames = async (req, res) => {
     }
 };
 
+// Add a new game to the database
+const addGame = async (req, res) => {
+    try {
+        const { name, description, image, genres, platform, releaseDate, developer, rating } = req.body;
+
+        // Validate required fields
+        if (!name || !description || !image || !genres || !platform || !releaseDate || !developer || rating == null) {
+            return res.status(400).json({ error: 'All fields are required.' });
+        }
+
+        // Create and save the game
+        const newGame = new Game({ name, description, image, genres, platform, releaseDate, developer, rating });
+        const savedGame = await newGame.save();
+
+        res.status(201).json({ message: 'Game added successfully', game: savedGame });
+    } catch (err) {
+        console.error("Error adding game:", err.message);
+        res.status(500).json({ error: 'Error adding game' });
+    }
+};
+
 module.exports = {
     mainPage,
-    getAllGames, // Export the new function
+    getAllGames,
+    addGame, // Export the new function
 };

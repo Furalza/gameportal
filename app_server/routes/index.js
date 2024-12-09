@@ -23,7 +23,8 @@ router.get('/logout', (req, res) => {
 
 // Game-related routes
 router.get('/games', gameController.mainPage); // Render the main games page
-router.get('/api/games', gameController.getAllGames); // API to fetch all games (new)
+router.get('/api/games', gameController.getAllGames); // API to fetch all games
+router.post('/api/games', gameController.addGame); // API to add a new game (new)
 
 // About page route
 router.get('/about', aboutController.about); // Render the About page

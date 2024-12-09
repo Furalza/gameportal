@@ -31,10 +31,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Session configuration
 app.use(
   session({
-    secret: 'yourSecretKey', // Replace with a secure secret
+    secret: process.env.SESSION_SECRET, // Replace with a secure secret
     resave: false,
     saveUninitialized: false,
-    cookie: { secure: false }, // Set to true for HTTPS
+    cookie: { secure: true }, // Set to true for HTTPS
   })
 );
 
