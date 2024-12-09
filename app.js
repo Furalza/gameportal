@@ -13,8 +13,8 @@ const indexRouter = require('./app_server/routes/index');
 const app = express();
 
 // Load SSL certificates
-const privateKey = fs.readFileSync(path.join(__dirname, 'sslcert/key.pem'), 'utf8');
-const certificate = fs.readFileSync(path.join(__dirname, 'sslcert/cert.pem'), 'utf8');
+const privateKey = process.env.SSL_PRIVATE_KEY;
+const certificate = process.env.SSL_CERTIFICATE;
 const credentials = { key: privateKey, cert: certificate };
 
 // View engine setup

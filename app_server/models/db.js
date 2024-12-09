@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 // Corrected MongoDB URI
-const dbURI = "mongodb+srv://alperenakcakaya:alperen1234@alperen1234.ke47c.mongodb.net/gameportal?retryWrites=true&w=majority";
+const dbURI = process.env.MONGODB_URI;
 
 // Use native promises
 mongoose.Promise = global.Promise;
